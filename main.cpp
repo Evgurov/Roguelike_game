@@ -46,7 +46,13 @@ Image velvety_door_tile("./resources/velvety_door.png");
 
 Image gameOverBuffer("./resources/game_over.png");
 
-Image gameEndBuffer("./resources/game_end.png");
+Image gameEndBuffer("./resources/well_played.png");
+
+Image trap1_tile("./resources/trap1.png");
+
+Image skeleton_tile("./resources/skeleton.png");
+
+Image stone_tile("./resources/stone.png");
 
 
 struct InputState
@@ -302,11 +308,37 @@ void createBackground(Image &frame, const std::string &filepath, int* tileMap, P
                     }
                 x += tileSize;
                 break;
+            case 'T': 
+                tileMap[y / tileSize * WINDOW_WIDTH / tileSize + x / tileSize] = 6;
+                for (i = 0; i < tileSize; i++)
+                    for (j = 0; j < tileSize; j++){
+                        frame.AddPixel(x + i, y + j, trap1_tile.GetPixel(i, j));
+                    }
+                x += tileSize;
+                break;
             case 'Q':
                 tileMap[y / tileSize * WINDOW_WIDTH / tileSize + x / tileSize] = 5;
                 for (i = 0; i < tileSize; i++)
                     for (j = 0; j < tileSize; j++){
                         frame.AddPixel(x + i, y + j, velvety_door_tile.GetPixel(i, j));
+                    }
+                x += tileSize;
+                break;
+            case 'S':
+                tileMap[y / tileSize * WINDOW_WIDTH / tileSize + x / tileSize] = 0;
+                for (i = 0; i < tileSize; i++)
+                    for (j = 0; j < tileSize; j++){
+                       frame.AddPixel(x + i, y + j, floor_tile.GetPixel(i, j));
+                       frame.AddPixel(x + i, y + j, skeleton_tile.GetPixel(i, j));
+                    }
+                x += tileSize;
+                break;
+            case 's':
+                tileMap[y / tileSize * WINDOW_WIDTH / tileSize + x / tileSize] = 1;
+                for (i = 0; i < tileSize; i++)
+                    for (j = 0; j < tileSize; j++){
+                       frame.AddPixel(x + i, y + j, floor_tile.GetPixel(i, j));
+                       frame.AddPixel(x + i, y + j, stone_tile.GetPixel(i, j));
                     }
                 x += tileSize;
                 break;
