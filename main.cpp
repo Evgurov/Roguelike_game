@@ -48,7 +48,7 @@ Image gameOverBuffer("./resources/game_over.png");
 
 Image gameEndBuffer("./resources/well_played.png");
 
-Image trap1_tile("./resources/trap1.png");
+Image trap8_tile("./resources/trap8.png");
 
 Image skeleton_tile("./resources/skeleton.png");
 
@@ -312,7 +312,7 @@ void createBackground(Image &frame, const std::string &filepath, int* tileMap, P
                 tileMap[y / tileSize * WINDOW_WIDTH / tileSize + x / tileSize] = 6;
                 for (i = 0; i < tileSize; i++)
                     for (j = 0; j < tileSize; j++){
-                        frame.AddPixel(x + i, y + j, trap1_tile.GetPixel(i, j));
+                        frame.AddPixel(x + i, y + j, trap8_tile.GetPixel(i, j));
                     }
                 x += tileSize;
                 break;

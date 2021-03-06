@@ -42,6 +42,8 @@ void Player::ProcessInput(Actions action, int width, int height, int* tileMap, i
                     doorOpened = 1;
                 } else if (tileAboveCur == 4) {
                     doorOpened = 2;
+                } else if (tileAboveCur == 5) {
+                    gameOverFlag = 2;
                 }
             break;
             case Actions::UP:
