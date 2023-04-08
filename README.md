@@ -20,5 +20,7 @@ $ ./bin/main
 * W, A, S, D - movement  
 * Press ESC to exit
 * Press E to enter the doors
+
+  <p align="center"><img src="screenshots/Screenshot_1" width="600" /></p>
 ____
 Evgeny Gurov, 2021
