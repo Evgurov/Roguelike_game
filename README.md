@@ -21,6 +21,6 @@ $ ./bin/main
 * Press ESC to exit
 * Press E to enter the doors
 
-  <p align="center"><img src="screenshots/Screenshot_1" width="600" /></p>
+  <p align="center"><img src="Screenshots/Screenshot_1" width="600" /></p>
 ____
 Evgeny Gurov, 2021
